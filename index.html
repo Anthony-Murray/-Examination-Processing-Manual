@@ -729,8 +729,8 @@
         <section id="registering-repeat-crn-on-old-programme">
             <h2>Registering Repeat CRN on Old Programme</h2>
             <h3>Query Email:</h3>
-            <p>Student Year 4 General Nursing D00XXXXXX Deferred her Internship Module PLCE N8143 in 2021/2022 on the old programme code DK_NPNUR_8. Can she be registered to the Deferred CRN 76669?</p>
-            <h3>Reply from O:</h3>
+            <p>Laura Byrne Year 4 General Nursing D00212401 Deferred her Internship Module PLCE N8143 in 2021/2022 on the old programme code DK_NPNUR_8. Can she be registered to the Deferred CRN 76669?</p>
+            <h3>Reply from Olly:</h3>
             <p>If the student is DX, then they are normally put on the old programme. There would have to be an agreement that the student could transfer to a whole new programme, and adjustments etc have to be done. I did one yesterday that Sinead asked me to on this programme but she said that it was agreed to allow that other student to graduate on the new programme. Basically, without proper consideration etc they can't just change a student's programme. DX and RX are always put on the "old" CRN and consequently they are on the original programme.</p>
             <h3>Confirmed from School:</h3>
             <p>They DO NOT want her to graduate on new programme but still won't let you register CRN, follow below steps:</p>
@@ -772,11 +772,287 @@
             </ol>
             <p><a href="#table-of-contents">Back to Top</a></p>
         </section>
-    </main>
-
-    <footer>
-        <p>End of Examination Processing Manual - Banner 9</p>
+    
+        <!-- Checking Components of a Module -->
+        <section id="checking-components-of-a-module">
+            <h2>Checking Components of a Module</h2>
+            <h3>Reasons for Checking Components of a Module:</h3>
+                <p>A module can have up to 3 components, for example:</p>
+        <ul>
+            <li>Final Exam</li>
+            <li>Continuous Assessment</li>
+            <li>Practical</li>
+        </ul>
+        <p>The student is graded per component, which will make up the full module grade. If compliance is not met OR registering repeat modules for a student, you can check the components of the module.</p>
+        <h3>Steps to Check Components:</h3>
+        <ol>
+            <li><strong>SHAGCOM</strong></li>
+            <li>Enter current Term</li>
+            <li>Enter CRN</li>
+            <li>GO</li>
+        </ol>
+        <p>You can also check components through <strong>SHACRSE</strong>:</p>
+        <ol>
+            <li><strong>SHACRSE</strong></li>
+            <li>Student number</li>
+            <li>Leave Term Blank</li>
+            <li>GO</li>
+            <li>Select the magnifying glass icon to the left of the module you wish to check</li>
+            <li>Below Course Detail, select "Components"</li>
+        </ol>
         <p><a href="#table-of-contents">Back to Top</a></p>
-    </footer>
+    </section>
+
+    <!-- How to Run a Final Grades Load -->
+    <section id="how-to-run-a-final-grades-load">
+        <h2>How to Run a Final Grades Load</h2>
+        <p>If there has been a change to broadsheet and new grades have been updated, a grade load must be processed to update on student's self-service.</p>
+        <h3>Steps to Run a Final Grades Load:</h3>
+        <ol>
+            <li><strong>SZREXFG</strong></li>
+            <li>Printer: DATABASE (All Caps)</li>
+            <li>Page Down</li>
+            <li>Term Code: Current Term</li>
+            <li>College: (B / N / E / I)</li>
+            <li>Student ID: D00xxxxx</li>
+            <li>Exam Session: JAN / JUN / SEP <em>(Very important to select correct exam session)</em></li>
+            <li>Page Down</li>
+            <li>F10 (Save)</li>
+            <li>Related</li>
+            <li>Review Output</li>
+            <li>File Name: F9</li>
+            <li>Select highest Record Count</li>
+            <li>View updated grades</li>
+        </ol>
+        <h3>Email Template for Students:</h3>
+        <blockquote>
+            <p>Dear student,</p>
+            <p>As you may be aware, there has been an update to your results. Your updated results can be viewed online.</p>
+            <p>If you are unsure of why there was a change, please contact your Head of Department who will be able to assist you.</p>
+            <p>Regards</p>
+        </blockquote>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+
+    <!-- Doing Adjustments on Individual Subjects -->
+    <section id="doing-adjustments-on-individual-subjects">
+        <h2>Doing Adjustments on Individual Subjects</h2>
+        <p>Run the Wrapper for the Current Term. If a student is not meeting Compliance for a stage, or they are missing certain subjects (it is best to do this on a stage-by-stage basis):</p>
+        <ol>
+            <li>Check <strong>SGASTDN</strong> for the current Catalog Term.</li>
+            <li>Note the Catalog Term that the student sat the area not meeting compliance.</li>
+            <li>Run Compliance for that Area (in most cases, if there is only one Catalog Term, then you don't need to bother running compliance, as it has to be that Catalog Term).</li>
+            <li>Check that the student has 60 credits in Courses Used.</li>
+            <li>If they have 60 credits there, use that CAT Term for Adjustment.</li>
+            <li>Check if they have the subjects in <strong>SHACRSE</strong> but are missing them in <strong>SMICRLT</strong> -- this usually indicates the Adjustment required (quite often this is a student who is doing a subject that isn't on the APS but HoD has agreed it can be counted).</li>
+        </ol>
+        <h3>Individual Course Adjustment:</h3>
+        <p><em>Be EXTREMELY careful and ensure any adjustments made are correct and have been approved by the Exam Board.</em></p>
+        <ol>
+            <li><strong>SMASARA</strong></li>
+            <li>Enter Student ID, <strong>current</strong> Catalog Term, and Area you want to Adjust.</li>
+            <li>Next Block</li>
+            <li>Get message to Add</li>
+            <li>Click Add</li>
+            <li>F10 and click Return</li>
+            <li>CTRL & Q to get out of Library</li>
+            <li>Options, Default All</li>
+            <li>Type in Area & Area Term (this is the Catalog Term that you want the system to make the adjustment from). If you get an error here, check through the "Default from Area" and see what Catalog Terms are attached to the Area. It may be a Catalog term from the year before if there was no change to the ACS.</li>
+            <li>Click Process Default</li>
+            <li>Next Block</li>
+            <li>Click on <strong>Course Attachment</strong> to see all the courses you have now attached to the student.</li>
+            <li>Add or remove courses as necessary (F6 to add; Shift & F6 to remove). You need to save when you get to the last record or it won't let you do anything.</li>
+            <li>Run Compliance again for the current term.</li>
+        </ol>
+        <h3>Removing Adjustment:</h3>
+        <ol>
+            <li><strong>SMASARA</strong></li>
+            <li>Course adjustment -- remove all & save</li>
+            <li>General Requirements -- remove all & save</li>
+        </ol>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+
+    <!-- Entering Exemptions -->
+    <section id="entering-exemptions">
+        <h2>Entering Exemptions</h2>
+        <h3>Steps to Enter Exemptions:</h3>
+        <ol>
+            <li>Check <strong>SFAREGS</strong> to ensure the student is registered on the subject they have gotten an exemption in.</li>
+            <li>Go to <strong>SFAALST</strong>, enter the current term (e.g., 201200) & the CRN.</li>
+            <li>Next block.</li>
+            <li>Enter a grade of X against the relevant student(s).</li>
+            <li>Save (F10).</li>
+            <li>Rollback to key block.</li>
+            <li>Tick the <strong>Roll</strong> box.</li>
+            <li>Next block & save.</li>
+        </ol>
+        <p><em>Please note, this mark will not go into Web for Faculty, so lecturers must be made aware that the student has been given a grade of X or they may try to enter a grade.</em></p>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+
+    <!-- Viewing Compliance Results -->
+    <section id="viewing-compliance-results">
+        <h2>Viewing Compliance Results</h2>
+        <p>This is the process of checking a student's progress towards their award against the requirements of their program of study. Compliance processing takes the student's exam results and measures them against the requirements set up for their Program.</p>
+        <p>Compliance will run as part of the GPA calculation processes (<strong>SZRWRAP</strong>) and can be viewed in Banner on <strong>SMICRLT</strong>, on broadsheets, grademailers, and is available to the student online.</p>
+        <p>If a student does not meet compliance, they will not be allowed to progress or graduate. When a student does not meet compliance, their academic standing will reflect this (will not be Pass, or AP).</p>
+        <h3>Viewing Compliance Results -- SMICRLT:</h3>
+        <p>This form allows you to drill down through compliance information. The main window summarizes compliance results, provides a quick status of compliance, and allows you to access additional information.</p>
+        <h3>Viewing General Requirements:</h3>
+        <p>The fields in the top block describe the compliance request. Enter the student ID and select the request number from the list of values in the pop-up window. Check the date of the compliance request.</p>
+        <p>Clicking on either the <strong>Met</strong> or <strong>Not Met</strong> buttons for <strong>General Requirements</strong> will open the Program Output Inquiry Form, where you can see the total credits displayed.</p>
+        <p>To see the individual area (stage) compliance results, click on the <strong>Area</strong> button.</p>
+        <p>When a student has met compliance, the credits required and credits used will be the same. When a student has not met compliance, there is a difference between the credits required and credits used.</p>
+        <p>The program GPA is displayed under the <strong>Minimum program GPA</strong> (NOTE: This is <strong>not</strong> the Award/Stage GPA).</p>
+        <h3>Viewing Compliance Results -- Per Area/Stage:</h3>
+        <p>This will show the total overall credits earned for each area/stage.</p>
+        <p>If an area/stage is passed, the <strong>Met</strong> button will be active; otherwise, the <strong>Not Met</strong> button will be active.</p>
+        <p>Clicking on the active button will display the general requirements for the area and GPA for that area.</p>
+        <p>If a waiver has been applied to an area, this will be displayed as <strong>WAI</strong> in the action code.</p>
+        <h3>Viewing Compliance Results -- Per Area:</h3>
+        <p>From the above, it can be seen that:</p>
+        <ul>
+            <li>Area 1 - student has 60 credits and has met compliance for Stage 1.</li>
+            <li>Area 2 - student has 60 credits and has met compliance for Stage 2.</li>
+            <li>Area 3 - student has 55 credits, has not met compliance for this area, and has not passed Stage 3. <strong>Not Met</strong> indicator.</li>
+            <li>Area 4 - student has 60 credits, has met compliance for this area, and has passed Stage 4.</li>
+        </ul>
+        <p>Clicking on the <strong>Used</strong> button will bring you into the subject(s) attached to this area that are used in compliance.</p>
+        <h3>Used Subjects by Compliance:</h3>
+        <p>This block displays the subjects used to calculate whether the student has met compliance.</p>
+        <p>If a student has not met compliance for an area, the reason could be as listed below:</p>
+        <ul>
+            <li>Check if the total actual credits match the total amount of credits required for the area -- normally 60 credits (passed or failed) in this block.</li>
+            <li>If credits do not amount to 60, it is possible that a subject the student has taken was not considered in compliance.</li>
+            <li>Check if the grade is in <strong>SHACRSE</strong> (rolled).</li>
+            <li>Check the APS for the course/module.</li>
+            <li>If the grade in <strong>SHACRSE</strong>, the module appears on the APS, and the student is on a different catalog term (<strong>SGASTDN</strong>), then the student may need an adjustment. As the subject that isn't in compliance is not on the version of the program the student is linked to.</li>
+        </ul>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+
+    <!-- Viewing / Changing a Student's Overall Result -->
+    <section id="viewing-changing-overall-result">
+        <h2>Viewing / Changing a Student's Overall Result</h2>
+        <p><strong>SHAINST</strong> records the student's academic standing and not the award classification (e.g., M2, H1, PS).</p>
+        <h3>Steps to Change a Student's Overall Result:</h3>
+        <ol>
+            <li>Enter Student ID and term in the key block.</li>
+            <li>Ctrl & Pg Down.</li>
+            <li>Record the student's original academic standing in the <strong>Combined Academic Standing</strong> field.</li>
+            <li>Record the new academic standing in the <strong>End of Term Academic Standing</strong> field.</li>
+            <li>You should only need to enter the following overrides:
+                <ul>
+                    <li>AP</li>
+                    <li>CD</li>
+                    <li>DE</li>
+                    <li>EX</li>
+                </ul>
+            </li>
+        </ol>
+        <p><em>You should never have to enter a PS in SHAINST as the system should calculate academic standings correctly. You should never have to override an IN in SHAINST. EB (Exam Board Decision) must have an override.</em></p>
+        <p>To allow the system to generate a new Academic Standing (e.g., if you had to put an IN override in for JAN), just remove the entry in the <strong>Combined Academic Standing</strong> field. The system will then override the <strong>End of Term Academic Standing</strong>.</p>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+
+    <!-- Viewing a Student's Award Classification -->
+    <section id="viewing-award-classification">
+        <h2>Viewing a Student's Award Classification</h2>
+        <h3>Steps to Check Award Classification:</h3>
+        <ol>
+            <li>Open <strong>SHADEGR</strong>.</li>
+            <li>Enter student ID and enter 'F9' in the Degree Sequence field.</li>
+            <li>Select the highest sequence number.</li>
+            <li>Ctrl & Pg Down.</li>
+            <li>Click on the <strong>Honours</strong> tab.</li>
+            <li>The Award Classification is in the <strong>Institutional Honours</strong> field.</li>
+        </ol>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+
+    <!-- Adjusting Credit Modules from GPA -->
+    <section id="adjusting-credit-modules-from-gpa">
+        <h2>Adjusting Credit Modules from GPA</h2>
+        <p>Students can complete add-on or optional modules to gain extra credit. In this case, sometimes the schools request these credits to be excluded in their overall GPA on broadsheet as it is out of sync with the normal overall GPA.</p>
+        <h3>Steps to Check / Exclude Extra Credits:</h3>
+        <ol>
+            <li><strong>SMICRLT</strong></li>
+            <li>Next Block x1.</li>
+            <li>Highlight the extra credit program details.</li>
+            <li>Select "Used" in Courses. This will show the Modules details of extra credit. (Take note).</li>
+            <li>Return.</li>
+            <li>Select "Not Met" in Detail Requirements.</li>
+            <li>Scroll down to highlight 2.500 credit, then select "Rule".</li>
+            <li>Next Block x1.</li>
+            <li>Tab over to "Count In GPA" and untick the box.</li>
+            <li>F10 -- Save.</li>
+        </ol>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+
+    <!-- Student Not Appearing on Broadsheet -->
+    <section id="student-not-appearing-on-broadsheet">
+        <h2>Student Not Appearing on Broadsheet</h2>
+        <h3>Reasons for Student Not Appearing on Broadsheet:</h3>
+        <ul>
+            <li>They may have changed the program.</li>
+            <li>Check <strong>SGASTDN</strong> for program history and ensure there is only <strong>One Active</strong> program.</li>
+            <li>Check levels of both programs. If they are different levels (e.g., moved from a Level 6 to a Level 8), take note of modules in <strong>SHACRSE</strong> of the new program and see what Level they are.</li>
+        </ul>
+        <h3>Steps to Fix:</h3>
+        <ol>
+            <li><strong>SHATCKN</strong></li>
+            <li>Student ID & Term (Term from original grade entry).</li>
+            <li>Page Down.</li>
+            <li>Go to the course to be changed.</li>
+            <li>Page Down.</li>
+            <li>Highlight the first module of the new program.</li>
+            <li>Page Down x2 (Code*).</li>
+            <li>F6 New Entry.</li>
+            <li>Enter in the new Level (e.g., from Level 06 to Level 08).</li>
+            <li>F10 Save.</li>
+            <li>Wrapper / Broadsheet Loads.</li>
+        </ol>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+
+    <!-- Running the Purge Process -->
+    <section id="running-the-purge-process">
+        <h2>Running the Purge Process</h2>
+        <p>In some cases where a student has switched programs and subjects are common between the old and new programs, the student may appear on both broadsheets in the current year.</p>
+        <h3>Steps to Run the Purge Process:</h3>
+        <ol>
+            <li>Check <strong>SMICRLT</strong> to ensure that there is a record for both programs in the current year (this will be when you press F9 in <strong>Request Number</strong> in the key block).</li>
+            <li>Note the <strong>Compliance Date</strong> for the incorrect program.</li>
+            <li><strong>SMPCPRG</strong></li>
+            <li>Enter the following fields:
+                <ol>
+                    <li>01 -- U</li>
+                    <li>02 -- Compliance Date for incorrect program</li>
+                    <li>03 -- Compliance Date for incorrect program</li>
+                    <li>04 -- Student ID (for student appearing on both programs)</li>
+                    <li>05 - %</li>
+                    <li>06 - %</li>
+                    <li>07 -- P</li>
+                    <li>08 -- R</li>
+                    <li>09 -- N</li>
+                    <li>10 -- leave blank</li>
+                    <li>11 -- U</li>
+                    <li>12 -- N</li>
+                </ol>
+            </li>
+            <li>Next Block & Save (F10).</li>
+            <li>Once the process is run, check <strong>SMICRLT</strong> again, and the incorrect program should be gone from the <strong>Request Number</strong> list.</li>
+            <li>Load processes will need to be run to have the student only appear on the correct Broadsheet.</li>
+        </ol>
+        <p><a href="#table-of-contents">Back to Top</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>End of Examination Processing Manual - Banner 9</p>
+    <p><a href="#table-of-contents">Back to Top</a></p>
+</footer>
 </body>
 </html>
