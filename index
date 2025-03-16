@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Processing Manual - Banner 9</title>
+</head>
+<body>
+    <header>
+        <h1>Examination Processing Manual - Banner 9</h1>
+        <nav aria-label="Table of Contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#running-processes">Running Processes</a>
+                    <ul>
+                        <li><a href="#how-to-run-a-wrapper">How to Run a Wrapper</a></li>
+                        <li><a href="#pre-broadsheet-run">Pre-Broadsheet Run</a></li>
+                        <li><a href="#broadsheet-load">Broadsheet Load</a></li>
+                    </ul>
+                </li>
+                <li><a href="#unrolling-grades">Unrolling Grades</a></li>
+                <li><a href="#credits-missing-from-broadsheet">Credits Missing from Broadsheet</a></li>
+                <li><a href="#award-class-issues">Award Class Issues</a>
+                    <ul>
+                        <li><a href="#award-class-missing">Award Class Missing</a></li>
+                        <li><a href="#award-class-missing-academic-standing-incorrect">Award Class Missing & Academic Standing Incorrect</a></li>
+                        <li><a href="#award-class-missing-ap-cd-students">Award Class / Academic Standing Missing (AP / CD Students)</a></li>
+                        <li><a href="#uncl-award-class-missing-term-incorrect">(UNCL) Award Class Missing if Term is Incorrect</a></li>
+                        <li><a href="#uncl-award-class-missing-student-due-to-graduate">(UNCL) Award Class Missing if Student is Due to Graduate</a></li>
+                        <li><a href="#shadegr-record-missing">SHADEGR Record Missing</a></li>
+                        <li><a href="#manually-entering-award-class-due-to-graduate">Manually Entering an Award Class due to Graduate</a></li>
+                    </ul>
+                </li>
+                <li><a href="#academic-standing-issues">Academic Standing Issues</a>
+                    <ul>
+                        <li><a href="#academic-standing-missing-from-broadsheet">Academic Standing Missing from Broadsheet</a></li>
+                        <li><a href="#academic-standing-ex-in-pulling-through">Academic Standing -- EX / IN Pulling Through Even If All Modules Passed</a></li>
+                    </ul>
+                </li>
+                <li><a href="#area-adjustment">Area Adjustment</a></li>
+                <li><a href="#award-gpa-missing">Award GPA Missing</a></li>
+                <li><a href="#award-missing-student-missing-june-line">Award Missing - Student is Missing from June Line on Broadsheet</a></li>
+                <li><a href="#no-credits-showing-in-crn">No Credits Showing in CRN</a></li>
+                <li><a href="#modules-missing-from-broadsheet">Modules Missing from Broadsheet</a></li>
+                <li><a href="#manually-changing-grades">Manually Changing Grades</a>
+                    <ul>
+                        <li><a href="#manually-changing-existing-grade">Manually Changing an Existing Grade</a></li>
+                        <li><a href="#manually-changing-overall-result">Manually Changing Overall Result</a></li>
+                    </ul>
+                </li>
+                <li><a href="#student-has-two-shadegr-records">Student has two SHADEGR records / appears twice on broadsheet</a></li>
+                <li><a href="#registering-repeat-crn-on-old-programme">Registering Repeat CRN on Old Programme</a></li>
+                <li><a href="#how-to-generate-transcripts">How to Generate Transcripts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Running Processes -->
+        <section id="running-processes">
+            <h2>Running Processes</h2>
+            <section id="how-to-run-a-wrapper">
+                <h3>How to Run a Wrapper</h3>
+                <h4>Reason to Run a Wrapper:</h4>
+                <ul>
+                    <li>If any information entered or updated and not showing on broadsheet, running a wrapper will help the information pull through.</li>
+                    <li>Do not run too many wrappers on the same programme / Student number as it may affect the information pulling through.</li>
+                </ul>
+                <h4>Steps to Run a Wrapper:</h4>
+                <ol>
+                    <li><strong>SZRWRAP</strong></li>
+                    <li>Page Down</li>
+                    <li>Printer: DATABASE (All Caps)</li>
+                    <li>Page Down</li>
+                    <li>TAB to Term Code and enter Current Term (i.e. 202400)</li>
+                    <li>TAB down to Student ID / Programme and enter details</li>
+                    <li>Page Down</li>
+                    <li>F10 (if the green log file appears in top right corner of screen, this doesn't mean it is complete)</li>
+                    <li>Take note of Wrapper File number in case this needed to be checked at a later stage</li>
+                    <li>Wait a minute</li>
+                    <li>Select Related in top right hand corner of screen</li>
+                    <li>Review Output (GJIREVO) -- (If error msg appears, the wrapper is not complete, "Ctrl + Q, wait")</li>
+                    <li>File Name: F9</li>
+                    <li>Select first highlighted file name with highest Record Count</li>
+                    <li>OK</li>
+                    <li>Scroll down page until you see "Compliance Run Completed Successfully"</li>
+                </ol>
+                <p><em>Note: Process a pre-broadsheet load to put info from Banner in broadsheet.</em></p>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="pre-broadsheet-run">
+                <h3>Pre-Broadsheet Run</h3>
+                <h4>Reason for a Pre-Broadsheet Run:</h4>
+                <ul>
+                    <li>If you have completed a wrapper successfully, a Broadsheet Run will update the actually Broadsheet with the updated information required.</li>
+                </ul>
+                <h4>Steps to Run a Pre-Broadsheet:</h4>
+                <ol>
+                    <li><strong>SZREBPM</strong></li>
+                    <li>Page Down</li>
+                    <li>Printer: DATABASE (All Caps)</li>
+                    <li>Page Down</li>
+                    <li>TAB to Term Code and enter Current Term (i.e. 202400)</li>
+                    <li>TAB down to Programme and enter Programme details</li>
+                    <li>Page Down</li>
+                    <li>Tick box "Save Parameter Set as"</li>
+                    <li>F10 (if the green log file appears in top right corner of screen, this doesn't mean it is complete)</li>
+                    <li>Take note of File number in case this needed to be checked at a later stage</li>
+                    <li>Wait a minute</li>
+                    <li>Select Related in top right hand corner of screen</li>
+                    <li>Review Output (GJIREVO)</li>
+                    <li>File Name: F9 / GO</li>
+                    <li>In available Files Pop Up Box, scroll down to today's date and double click on <strong>lis</strong> file number</li>
+                    <li>OK</li>
+                </ol>
+                <p><em>Note: Process a pre-broadsheet load to put info from Banner in broadsheet.</em></p>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="broadsheet-load">
+                <h3>Broadsheet Load</h3>
+                <h4>Reasons for No Award Classification:</h4>
+                <ul>
+                    <li>Check to see if any of the changes you made have pulled through onto Broadsheet.</li>
+                    <li>A WRAPPER then a pre-Broadsheet Run MUST be done before this Broadsheet Load.</li>
+                </ul>
+                <h4>Steps to Run a Broadsheet Load:</h4>
+                <ol>
+                    <li><strong>GZAREPS</strong></li>
+                    <li>Select <strong>SZREXMB</strong> -- Modularisation Broadsheet Report</li>
+                    <li>Run Report</li>
+                    <li>Enter your personal Banner Login Details</li>
+                    <li>Submit</li>
+                    <li>Enter information of programme you wish to run a Broadsheet Load</li>
+                    <li>Example of highlighted below where to enter information</li>
+                    <li>Submit</li>
+                </ol>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+        </section>
+
+        <!-- Unrolling Grades -->
+        <section id="unrolling-grades">
+            <h2>Unrolling Grades</h2>
+            <h3>To Unroll Grades from a Section:</h3>
+            <ol>
+                <li><strong>SHAUNRL</strong></li>
+                <li>Enter Term, enter CRN.</li>
+                <li>Click <strong>Unroll from Academic History.</strong></li>
+                <li>Select <strong>Retain Grade</strong> (so grade can be seen again in SFAALST and remains on the Registration Record) or <strong>Remove Grade</strong> (to remove the grade completely from the Registration Record).</li>
+                <li>Save</li>
+            </ol>
+            <h3>To Unroll Grades from an Individual Student:</h3>
+            <ol>
+                <li><strong>SHATCKN</strong></li>
+                <li>Enter Student ID, Term, Select Schedule for Validation check up</li>
+                <li>Go</li>
+                <li>Select the CRN you want to unroll</li>
+                <li>Click Delete</li>
+                <li>On the Pop up box select either Retain Grade (so grade can be seen again in SFAALST and remains on the Registration Record) or Remove Grade (to remove the grade completely from the Registration Record)</li>
+            </ol>
+            <p><a href="#table-of-contents">Back to Top</a></p>
+        </section>
+
+        <!-- Credits Missing from Broadsheet -->
+        <section id="credits-missing-from-broadsheet">
+            <h2>Credits Missing from Broadsheet</h2>
+            <h3>Reasons for Credits Missing from Broadsheet:</h3>
+            <ul>
+                <li>Has a module been registered with an incorrect CRN or are credits missing from CRN (SFAREGS)?</li>
+                <li>Is compliance met (SMICRLT)? If not met, check to see how many Credits Used are missing?</li>
+                <li>Is the grade term in SHADEGR correct? (Will only have SHADEGR record if graduation year)</li>
+                <li>Has the student changed programmes at any stage (SMASARA)?</li>
+                <li>Are there any modules with Include / exclude that are not matching (SHACRSE)? Follow Steps:</li>
+            </ul>
+            <h3>Steps to Check and Fix Credits Missing:</h3>
+            <ol>
+                <li><strong>SHACRSE</strong></li>
+                <li>Check through the list to see if there are any included / excluded modules not aligned.</li>
+                <li>If a module is included or excluded twice, check the Hour Credits to see if match the amount of credits missing.</li>
+                <li>By having the same module excluded twice or included twice, the credits will not be added correctly to their account. A module must have one include and one exclude to balance the credits correctly.</li>
+                <li><strong>SHATCKN</strong></li>
+                <li>Student ID</li>
+                <li>Term (Confirm correct term with school)</li>
+                <li>Page Down</li>
+                <li>Scroll down to module required</li>
+                <li>TAB over to REPEAT column</li>
+                <li>Double click on Include / Exclude to open drop down box</li>
+                <li>Select correct option needed</li>
+                <li>F10 -- SAVE</li>
+                <li>Run a Wrapper</li>
+            </ol>
+            <p><em>Note: Process wrapper & a pre-Broadsheet Run.</em></p>
+            <p><a href="#table-of-contents">Back to Top</a></p>
+        </section>
+
+        <!-- Award Class Issues -->
+        <section id="award-class-issues">
+            <h2>Award Class Issues</h2>
+            <section id="award-class-missing">
+                <h3>Award Class Missing</h3>
+                <h4>Reasons for No Award Classification:</h4>
+                <ul>
+                    <li>Did the Student change programme?</li>
+                    <li>Is compliance met (SMICRLT)?</li>
+                    <li>Is the grade term in SHADEGR correct?</li>
+                    <li>Is there an Academic Standing on Broad Sheet (SHAINST)?</li>
+                    <li>Is Catalog Term before Programme Term Date? (SMAAREA)</li>
+                </ul>
+                <h4>How to Check All Credits are Met and Showing in Students Classification:</h4>
+                <ol>
+                    <li><strong>SMICRLT</strong></li>
+                    <li>Enter Student ID</li>
+                    <li>F9</li>
+                    <li>OK</li>
+                    <li>Page Down</li>
+                    <li>Click Met to check Credits required and Credits used. This will show if the required credits are met.</li>
+                    <li>Click "X" top left corner of screen to go page back</li>
+                    <li>Click Not Met if highlighted and check to see what credits are missing.</li>
+                </ol>
+                <h4>Checking Award Classification (if all Credits are met in SMICRLT):</h4>
+                <ol>
+                    <li><strong>SHADEGR</strong></li>
+                    <li>Enter Student ID</li>
+                    <li>TAB</li>
+                    <li>F9 in Degree Sequence</li>
+                    <li>Double Click on Sequence Number</li>
+                    <li>Select GO</li>
+                    <li>Check to see if Graduation Term & Year are on current term</li>
+                    <li>If not on current term, Update both Term & Year</li>
+                    <li>F10 -- Save</li>
+                    <li>Run Wrapper -- Pre-Broadsheet -- Broadsheet load</li>
+                </ol>
+                <h4>Checking if Catalog Term is Before Programme Term:</h4>
+                <ol>
+                    <li><strong>SMAAREA</strong></li>
+                    <li>Search programme in Area box or enter in manually -- You will need to enter programme and level with underline then Stage for example: DK_EELES_7 YR3 will need to be entered in as: EELES7_3 (Check SGASTDN for programme / year first).</li>
+                    <li>In General Requirements -- From Term (e.g., 2019) and student Catalog term is (e.g., 2018), this will need an Area Adjustment as Programme has changed.</li>
+                    <li>Revert to Area Adjustment notes to follow.</li>
+                </ol>
+                <h4>Award Class Generated in SHADEGR but Missing from Final Stage on the Broadsheet:</h4>
+                <ol>
+                    <li>In <strong>SFAREGS</strong> go to Related to Students Attributes and Cohorts.</li>
+                    <li>Check in Cohorts if the year is correct. For example, if the student is year 6 in SFAREGS and on the broadsheet (final year) but in cohort he is year 5, this may prevent award to appear for final year on broadsheet. Amend it, run a wrapper and pre-broadsheet load.</li>
+                </ol>
+                <p><em>If any of the above solve the issue, a Wrapper / Pre-broadsheet & Broadsheet Load will need to be processed.</em></p>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="award-class-missing-academic-standing-incorrect">
+                <h3>Award Class Missing & Academic Standing Incorrect</h3>
+                <h4>Steps to Check and Fix:</h4>
+                <ol>
+                    <li><strong>SGASTDN</strong> -- Take note of Catalog Term for each student</li>
+                    <li><strong>SGASTDN</strong> -- Check through each term for any programme changes & note the term change if any</li>
+                    <li><strong>SMICRLT</strong></li>
+                    <li>Request Number: Select most recent compliance Date -- Go</li>
+                    <li>"Not Met" Areas</li>
+                    <li>Highlight correct programme / year</li>
+                    <li>"Not Met" Detail Requirements</li>
+                    <li>Count credits (60) AND check modules are correct (open SHACRSE to compare)</li>
+                    <li>If more or less credits or incorrect modules, an adjustment will need to be processed.</li>
+                </ol>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="award-class-missing-ap-cd-students">
+                <h3>Award Class / Academic Standing Missing (AP / CD Students)</h3>
+                <h4>Example for No Award Class / Academic Standing for AP/CD Students:</h4>
+                <p>The award class / Academic Standing is missing on the stage 3 broadsheet but had a module from 2nd year which they repeat now and passed but the award class is still missing?</p>
+                <p>This can be temporarily fixed to let school office print off the broadsheet but changes will need to be reverted back after they are printed:</p>
+                <ol>
+                    <li><strong>SFAREGS</strong></li>
+                    <li>Related</li>
+                    <li>Student Attributes and Cohorts</li>
+                    <li>Page Down x2</li>
+                    <li>Attribute Code - Highlight Y3</li>
+                    <li>Delete (top right corner)</li>
+                    <li>F6 -- Add new line</li>
+                    <li>Enter Y2</li>
+                    <li>F10 -- Save</li>
+                    <li>Run Wrapper & Pre-Broadsheet Load</li>
+                </ol>
+                <p><em>Awards class will now show on broadsheet. Advise school: It is temporarily fixed. If you would let me know when you have printed the Broadsheet off, as I need to revert the changes back on the system to ensure this student is on Ratification list for graduation. I am going to leave this ticket open so you can let me know when Broadsheets are printed?</em></p>
+                <p>When school confirm they have printed broadsheets, follow same steps as above but changing back to Y3 in Attribute Code.</p>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="uncl-award-class-missing-term-incorrect">
+                <h3>(UNCL) Award Class Missing if Term is Incorrect</h3>
+                <h4>Reasons for No Award Classification:</h4>
+                <ul>
+                    <li>Did the Student change programme?</li>
+                    <li>Is compliance met (SMICRLT)?</li>
+                    <li>Is the grade term in SHADEGR correct? Follow below instructions:</li>
+                    <li>After running a Wrapper and Award Class still missing?</li>
+                    <li>Are the students due to graduate?</li>
+                </ul>
+                <h4>Steps to Fix:</h4>
+                <ol>
+                    <li>Only proceed with the following if the student is due to Graduate</li>
+                    <li><strong>SHADEGR</strong></li>
+                    <li>Graduation Term: Change to Current term</li>
+                    <li>Graduation Year: Current Year</li>
+                    <li>Graduation Status: XG (Expected to Graduate)</li>
+                    <li>F10 -- SAVE</li>
+                    <li>Run a Wrapper - SZRWRAP</li>
+                    <li>Page Down</li>
+                    <li>Printer: DATABASE (All Caps)</li>
+                    <li>Page Down</li>
+                    <li>TAB to Term Code and enter Current Term (i.e. 202200)</li>
+                    <li>TAB down to Student ID / Programme and enter details</li>
+                    <li>Page Down</li>
+                    <li>F10 (if the green log file appears in top right corner of screen, this doesn't mean it is complete)</li>
+                    <li>Take note of Wrapper File number in case this needed to be checked at a later stage</li>
+                    <li>Wait a minute</li>
+                    <li>Select Related in top right hand corner of screen</li>
+                    <li>Review Output (GJIREVO)</li>
+                    <li>File Name: F9</li>
+                    <li>Select first highlighted file name with highest Record Count</li>
+                    <li>OK</li>
+                    <li>Scroll down page until you see "Compliance Run Completed Successfully"</li>
+                    <li><strong>SHADEGR</strong></li>
+                    <li>Click Honors TAB -- View to see if institutional Honors Description has updated.</li>
+                    <li>F10 - SAVE</li>
+                </ol>
+                <p><em>Note: Process a pre-broadsheet load to pull info from Banner in broadsheet.</em></p>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="uncl-award-class-missing-student-due-to-graduate">
+                <h3>(UNCL) Award Class Missing if Student is Due to Graduate</h3>
+                <h4>Reasons for No Award Classification:</h4>
+                <ul>
+                    <li>Did the Student change programme?</li>
+                    <li>Is compliance met (SMICRLT)</li>
+                    <li>Does the programme set up correctly, has an award stage?</li>
+                    <li>Is the grade term in SHADEGR correct?</li>
+                    <li>After running a Wrapper and Award Class still missing?</li>
+                    <li>Are the students due to graduate? Follow below instructions:</li>
+                </ul>
+                <h4>Steps to Fix:</h4>
+                <ol>
+                    <li><strong>SFAREGS</strong></li>
+                    <li>Student ID</li>
+                    <li>TAB</li>
+                    <li>Current Term</li>
+                    <li>Down Page</li>
+                    <li>Select Curricula Tab</li>
+                    <li>Ensure correct programme in Curriculum Box</li>
+                    <li>Roll to Outcome</li>
+                    <li>Warning Pop-up Box -- Select Yes</li>
+                    <li>F10 -- Save</li>
+                    <li><strong>SHADEGR</strong></li>
+                    <li>Student ID</li>
+                    <li>Enter in Degree Sequence Number</li>
+                    <li>Page Down</li>
+                    <li>TAB down to Graduation Term -- Enter in current Term (202200)</li>
+                    <li>TAB</li>
+                    <li>Graduation Status -- Enter XG (Expected to Graduate) Status Outcome will then automatically change to PN (Pending)</li>
+                    <li>F10 -- SAVE</li>
+                    <li>Run a Wrapper -- SZRWRAP</li>
+                    <li>Run a Pre-broadsheet Load</li>
+                </ol>
+                <p><em>Example: Student is compliant, has a SHADEGR record (updated to the right term), but award is not generating. This is because the programme is set up incorrectly and the award stage is missing from compliances. Need to ask Olly to fix this.</em></p>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="shadegr-record-missing">
+                <h3>SHADEGR Record Missing</h3>
+                <h4>Reasons for No Award Classification:</h4>
+                <ul>
+                    <li>Did the Student change programme?</li>
+                    <li>Is compliance met (SMICRLT)?</li>
+                    <li>Is the grade term in SHADEGR correct?</li>
+                    <li>After running a Wrapper and Award Class still missing?</li>
+                    <li>Are the students due to graduate? Follow below instructions:</li>
+                </ul>
+                <h4>Steps to Fix:</h4>
+                <ol>
+                    <li><strong>SFAREGS</strong></li>
+                    <li>Student ID</li>
+                    <li>TAB</li>
+                    <li>Current Term</li>
+                    <li>Down Page</li>
+                    <li>Select Curricula Tab</li>
+                    <li>Ensure correct programme in Curriculum Box</li>
+                    <li>Roll to Outcome (Note Degree sequence)</li>
+                    <li>Warning Pop-up Box -- Select Yes</li>
+                    <li>F10 -- Save</li>
+                    <li><strong>SHADEGR</strong></li>
+                    <li>Student ID</li>
+                    <li>Enter in Degree Sequence Number</li>
+                    <li>Page Down</li>
+                    <li>TAB down to Graduation Term -- Enter in current Term (202200)</li>
+                    <li>TAB</li>
+                    <li>Graduation Status -- Enter XG (Expected to Graduate) Status Outcome will then automatically change to PN (Pending)</li>
+                    <li>F10 -- SAVE</li>
+                    <li>Run a Wrapper - SZRWRAP</li>
+                </ol>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="manually-entering-award-class-due-to-graduate">
+                <h3>Manually Entering an Award Class due to Graduate</h3>
+                <h4>Reasons for No Award Classification:</h4>
+                <ul>
+                    <li>Did the Student change programme?</li>
+                    <li>Is compliance met (SMICRLT)?</li>
+                    <li>Is the grade term in SHADEGR correct?</li>
+                    <li>After running a Wrapper and Award Class still missing or incorrect?</li>
+                    <li>Are the students due to graduate? Follow below instructions:</li>
+                </ul>
+                <h4>Steps to Manually Enter an Award Class:</h4>
+                <ol>
+                    <li><strong>SHADEGR</strong></li>
+                    <li>Student ID</li>
+                    <li>Degree Sequence -- Click on dropdown tab</li>
+                    <li>Sequence Number -- Double Click on number (ensure current graduation Term is correct)</li>
+                    <li>Page Down</li>
+                    <li>Graduation Status: Change to Graduated</li>
+                    <li>F10 -- SAVE</li>
+                    <li>Select Honors TAB</li>
+                    <li>Page Down</li>
+                    <li>CODE: Change to required code e.g. PS</li>
+                    <li>F10 -- SAVE</li>
+                    <li>RUN A WRAPPER</li>
+                </ol>
+                <p><em>*Email Louise Mc Caul in the Awards office to advice that you have graduated this student*</em></p>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+        </section>
+
+        <!-- Academic Standing Issues -->
+        <section id="academic-standing-issues">
+            <h2>Academic Standing Issues</h2>
+            <section id="academic-standing-missing-from-broadsheet">
+                <h3>Academic Standing Missing from Broadsheet</h3>
+                <h4>Steps to Fix:</h4>
+                <ol>
+                    <li><strong>SHAINST</strong></li>
+                    <li>Student ID</li>
+                    <li>Current Term</li>
+                    <li>GO</li>
+                    <li>Remove Combined Academic Standing</li>
+                    <li>F10 -- Save</li>
+                    <li>Wrapper / Pre-Broadsheet / Broadsheet Load</li>
+                </ol>
+                <p><em>The end of Term Academic Standing should then pull through.</em></p>
+                <h4>If the Above Does Not Work:</h4>
+                <ol>
+                    <li><strong>SFAREGS</strong></li>
+                    <li>Related</li>
+                    <li>Student Attributes & Cohorts</li>
+                    <li>Next Block x2</li>
+                    <li>Attribute Code -- Check year is correct. Even if correct, F10 save.</li>
+                    <li>Wrapper & Pre-Broadsheet</li>
+                </ol>
+                <h4>If Still Not Pulling Through:</h4>
+                <ol>
+                    <li>Check programme year in <strong>SMAAREA</strong> to ensure student year is correct! If the student is currently Y5 but programme have only Y1 in SMAAREA, the student Attributes & Cohorts will need to be changed from Y5 to Y1.</li>
+                    <li>This will pull through the Academic Standing as well as the award class.</li>
+                </ol>
+                <h4>If All of Above Still Do Not Work:</h4>
+                <p>Check student Catalog term, programme term and compliance as an adjustment maybe needed.</p>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+            <section id="academic-standing-ex-in-pulling-through">
+                <h3>Academic Standing -- EX / IN Pulling Through Even If All Modules Passed</h3>
+                <h4>Check Compliance in Area:</h4>
+                <ol>
+                    <li><strong>SMICRLT</strong></li>
+                    <li>If compliance is not met in the area, open the course attachment to see what is missing for students (Detail Requirements).</li>
+                    <li>Check through each subject, elective, optional is ticked on the left and Check through the Credits Used for each subject, and ensure it totals to 60 credits.</li>
+                    <li>If the optional is not ticked you can adjust this year and delete optional in the adjustment.</li>
+                    <li>If one of the subjects has 0 credits, or the totals are less than 60 credits, this is the issue.</li>
+                </ol>
+                <p><a href="#table-of-contents">Back to Top</a></p>
+            </section>
+        </section>
+
+        <!-- Area Adjustment -->
+        <section id="area-adjustment">
+            <h2>Area Adjustment</h2>
+            <h3>Steps to Perform an Area Adjustment:</h3>
+            <ol>
+                <li><strong>SMASARA</strong></li>
+                <li>Enter Student ID</li>
+                <li>The student's Catalog Term</li>
+                <li><strong>Area</strong>: (Example: DK_IMILM_8_YR4 -- Enter: IMILM8_4)</li>
+                <li>Next Block</li>
+                <li>If the <strong>General Requirements</strong> and <strong>Course Attachment</strong> boxes are greyed out or have a tick through them, this means there is already an adjustment on this area. You cannot continue.</li>
+                <li>If all boxes are blank and you don't get a pop-up then Roll Back to the key block and continue from Step 8.</li>
+                <li>If you get a message saying the <strong>ID Must Exist in the Student Library</strong>:
+                    <ol>
+                        <li>Click Add</li>
+                        <li>Check the ID is correct</li>
+                        <li>F10 and click Return</li>
+                        <li>CTRL & Q to get out of Library</li>
+                    </ol>
+                </li>
+                <li><strong>Related, Default All</strong></li>
+                <li>Type in the <strong>Area</strong> (Example: DK_IMILM_8_YR4 -- Enter: IMILM8_4)</li>
+                <li><strong>Area Term</strong> (this is the "new" Catalog Term you want Compliance assign to this student).</li>
+                <li>Click Process Default</li>
+                <li>Select Course Attachment</li>
+                <li>Add / Remove modules OR amend credits</li>
+                <li>F10 Save</li>
+                <li>When adjustments are finished, run the Wrapper for either the student or the programme.</li>
+                <li>You must also do an Award Area adjustment if the student is in an award year. (Example: DK_IMILM_8_AW -- Enter: IMILM8_AW)</li>
+            </ol>
+            <p><em>Repeats may not be as straightforward and you may need to look at individual subjects.</em></p>
+            <p><a href="#table-of-contents">Back to Top</a></p>
+        </section>
+
+        <!-- Award GPA Missing -->
+        <section id="award-gpa-missing">
+            <h2>Award GPA Missing (NNMTL_8)</h2>
+            <p>Award GPA will not appear on broadsheet (SEP) as the module the student repeated wasn't part of the Award calculation / not in the award area. The Award GPA will appear on the result list that goes to Academic Council and will appear on the transcript.</p>
+            <p>In this case, the award GPA will need to be handwritten onto Broadsheet.</p>
+            <p><a href="#table-of-contents">Back to Top</a></p>
+        </section>
+
+        <!-- Award Missing - Student is Missing from June Line on Broadsheet -->
+        <section id="award-missing-student-missing-june-line">
+            <h2>Award Missing - Student is Missing from June Line on Broadsheet</h2>
+            <h3>Reasons for Term Line Missing from Broadsheet:</h3>
+            <p>If the student is missing June line in the broadsheet, they could be on a yearlong programme that runs over 2 semesters (Starts in January, ends in December). They appear on the broadsheet as year 2 student, when the rest students are year 1. The year will need to change from year 2 back to year one.</p>
+            <h3>Steps to Fix:</h3>
+            <ol>
+                <li><strong>SGASTDN</strong></li>
+                <li>Student ID</li>
+                <li>Current Term & Go</li>
+                <li>Related</li>
+                <li>Student Cohorts and Attributes</li>
+                <li>Page Down x2</li>
+                <li>Attribute Code - Enter in New Year (Y1)</li>
+                <li>F10 -- SAVE</li>
+                <li>Run a Wrapper</li>
+                <li>Pre-Broadsheet Run</li>
+                <li>Broadsheet Load</li>
+            </ol>
+            <p><em>Note: If the award year doesn't appear for student, could be wrong year in attributes, make sure it is current academic year in attribute. Make sure that information in student attributes and cohort corresponds with SFAREGS. If a student completed their final year but had a repeat module from a previous year, which they retook during the August session, the award classification will not appear in the broadsheet because the module is from second year while the student is listed as third year. In this case, the student's attributes and cohort need to be changed to second year, and a pre-broadsheet load should be run.</em
